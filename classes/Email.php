@@ -70,7 +70,7 @@ class Email
         //Creamos cuerpo de email
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>. <br/> <br/>Has solicitado reestablecer tu password, por favor sigue el enlace</p>";
-        $contenido .= "<p>Presiona aquí:  <a href='http://localhost:3000/recuperar?token=" . $this->token ."'>Reestablecer password</a></p>";
+        $contenido .= "<p>Presiona aquí:  <a href='https://desolate-fortress-53145.herokuapp.com/recuperar?token=" . $this->token ."'>Reestablecer password</a></p>";
         $contenido .= "<p>Si tú no solicitaste esto, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
 
