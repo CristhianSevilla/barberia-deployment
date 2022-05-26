@@ -13,7 +13,7 @@ class APIController
         //Consultamos la base de datos
         $servicios = Servicio::all();
         //Creamos la API
-        echo json_encode($servicios, JSON_UNESCAPED_UNICODE);
+        echo json_encode($servicios);
     }
 
     public static function guardar()
