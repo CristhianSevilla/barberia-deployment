@@ -38,7 +38,7 @@ class Email
 
         //Creamos cuerpo de email
         $contenido = "<html>";
-        $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>. <br/> <br/>Has creado una cuenta en App Salon, solo debes confirmarla presionando el sigueinte enlace</p>";
+        $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>. <br/> <br/>Has creado una cuenta en App Salon, solo debes confirmarla presionando el siguiente enlace</p>";
         $contenido .= "<p>Presiona aquí:  <a href='https://desolate-fortress-53145.herokuapp.com/confirmar-cuenta?token=" . $this->token ."'>Confirmar Cuenta</a></p>";
         $contenido .= "<p>Si tú no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
