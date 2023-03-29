@@ -20,7 +20,7 @@ class AdminCita extends ActiveRecord{
     {
         $this->id = $args['id'] ?? null;
         $this->hora = $args['hora'] ?? '';
-        $this->ciente = $args['ciente'] ?? '';
+        $this->cliente = $args['cliente'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->telefono = $args['telefono'] ?? '';
         $this->servicio = $args['servicio'] ?? '';
