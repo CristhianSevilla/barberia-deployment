@@ -22,11 +22,11 @@ class Email
     {
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = 'ac67e8e7b2dd63';
-        $mail->Password = '1e867ace4a2362';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         $mail->setFrom('cuentas@appsalon.com'); //Dominio del proyecto
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
@@ -39,7 +39,7 @@ class Email
         //Creamos cuerpo de email
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>. <br/> <br/>Has creado una cuenta en App Salon, solo debes confirmarla presionando el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aquí:  <a href='https://desolate-fortress-53145.herokuapp.com/confirmar-cuenta?token=" . $this->token ."'>Confirmar Cuenta</a></p>";
+        $contenido .= "<p>Presiona aquí:  <a href='" . $_ENV['APP_URL'] ."/confirmar-cuenta?token=" . $this->token ."'>Confirmar Cuenta</a></p>";
         $contenido .= "<p>Si tú no solicitaste esta cuenta, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
 
@@ -53,11 +53,11 @@ class Email
     public function enviarInstrucciones(){
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = 'ac67e8e7b2dd63';
-        $mail->Password = '1e867ace4a2362';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         $mail->setFrom('cuentas@appsalon.com'); //Dominio del proyecto
         $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
@@ -70,7 +70,7 @@ class Email
         //Creamos cuerpo de email
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>. <br/> <br/>Has solicitado reestablecer tu password, por favor sigue el enlace</p>";
-        $contenido .= "<p>Presiona aquí:  <a href='https://desolate-fortress-53145.herokuapp.com/recuperar?token=" . $this->token ."'>Reestablecer password</a></p>";
+        $contenido .= "<p>Presiona aquí:  <a href='" . $_ENV['APP_URL'] ."/recuperar?token=" . $this->token ."'>Reestablecer password</a></p>";
         $contenido .= "<p>Si tú no solicitaste esto, puedes ignorar el mensaje</p>";
         $contenido .= "</html>";
 
@@ -81,3 +81,4 @@ class Email
         $mail->send();
     }
 }
+
