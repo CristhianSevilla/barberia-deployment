@@ -28,8 +28,8 @@ class Email
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@appsalon.com'); //Dominio del proyecto
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->setFrom($_ENV['APP_URL']); //Dominio del proyecto
+        $mail->addAddress('cuentas@barberclub.com', 'BarberClub.com');
         $mail->Subject = 'Confirma tu cuenta';
 
         //Usamos html
